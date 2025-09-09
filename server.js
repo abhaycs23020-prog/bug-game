@@ -5,7 +5,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 
-dotenv.config();
+dotenv.config(); // Load environment variables
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -15,26 +16,25 @@ const PORT = process.env.PORT || 5000;
 // ---------------- Middleware ----------------
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname)));
+
+// Serve static files (e.g. index.html, CSS, JS) from "public" folder
+app.use(express.static(path.join(__dirname, "public")));
 
 // ---------------- MongoDB Connection ----------------
 mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 })
 .then(() => console.log("✅ MongoDB connected"))
-.catch(err => console.error("❌ MongoDB connection error:", err));
+.catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // ---------------- Routes ----------------
+// Serve index.html on root route
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-
-// Optional: login/register routes
-// app.post("/api/register", async (req, res) => { ... });
-// app.post("/api/login", async (req, res) => { ... });
 
 // ---------------- Start Server ----------------
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
