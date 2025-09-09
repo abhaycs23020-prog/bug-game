@@ -1,0 +1,108 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#0f0f0f,#1c1c1c);
+    color: #fff;
+    text-align: center;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hidden { display: none; }
+
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 15px;
+    margin: 10px;
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 25px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg,#00ff00,#00ccff);
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00ff00, 0 0 25px #00ccff;
+}
+
+.btn.small {
+    font-size: 1rem;
+    padding: 8px 15px;
+}
+
+/* Game Area */
+#gameArea {
+    position: relative;
+    width: 90%;
+    height: 60vh;
+    border: 3px solid #00ff00;
+    margin: 20px auto;
+    background-color: #111;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ff00 inset;
+}
+
+/* Bugs */
+.bug {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    animation: float 5s ease-in-out infinite;
+    transition: transform 0.2s;
+}
+
+.bug:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Power-ups */
+.powerup {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Controls */
+.controls {
+    margin-top: 10px;
+}
