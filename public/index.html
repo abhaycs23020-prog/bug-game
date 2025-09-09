@@ -30,36 +30,12 @@
         <div>Level: <span id="level">1</span></div>
         <div>Time: <span id="time">60</span>s</div>
         <div>Combo: <span id="combo">0</span></div>
-        <button class="btn small" id="settingsBtn">⚙️ Settings</button>
+        <!-- Removed settings button -->
     </div>
     <div id="gameArea"></div>
     <div class="controls">
         <button class="btn small" id="muteBtn">🔊 Mute</button>
     </div>
-</div>
-
-<!-- ---------------- Settings Menu ---------------- -->
-<div id="settingsMenu" class="screen hidden glass-card" style="position:absolute; top:20%; left:50%; transform:translateX(-50%); flex-direction:column; width:300px;">
-    <h2>Settings</h2>
-    
-    <label for="difficultyInGame">Difficulty:</label>
-    <select id="difficultyInGame">
-        <option value="easy">Easy</option>
-        <option value="medium" selected>Medium</option>
-        <option value="hard">Hard</option>
-    </select>
-
-    <label>
-        <input type="checkbox" id="soundToggle" checked>
-        Sound
-    </label>
-
-    <label>
-        <input type="checkbox" id="powerupToggle" checked>
-        Power-ups
-    </label>
-
-    <button class="btn small" id="closeSettings">Close</button>
 </div>
 
 <!-- ---------------- End Screen ---------------- -->
