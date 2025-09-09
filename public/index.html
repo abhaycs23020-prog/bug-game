@@ -8,11 +8,22 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- ---------------- Start Screen with Difficulty ---------------- -->
 <div id="startScreen" class="screen">
     <h1>🐞 Bug Fixing Simulator</h1>
+
+    <label for="difficulty">Select Difficulty:</label>
+    <select id="difficulty">
+        <option value="easy" selected>Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+
     <button class="btn" id="startBtn">Start Game</button>
 </div>
 
+<!-- ---------------- Game Screen ---------------- -->
 <div id="gameScreen" class="screen hidden">
     <div id="scoreBoard" class="glass-card">
         <div>Score: <span id="score">0</span></div>
@@ -26,6 +37,7 @@
     </div>
 </div>
 
+<!-- ---------------- End Screen ---------------- -->
 <div id="endScreen" class="screen hidden">
     <h1>🎮 Game Over!</h1>
     <p>Your Score: <span id="finalScore">0</span></p>
