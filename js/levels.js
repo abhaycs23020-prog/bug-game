@@ -23,7 +23,7 @@ function loadLevel(levelIndex) {
   currentLevel = levelIndex;
   const level = levels[levelIndex];
 
-  // Reset robot
+  // Reset robot position & direction
   robotPos = {x: 1, y: 5};
   direction = "up";
   updateRobot();
@@ -46,6 +46,18 @@ function loadLevel(levelIndex) {
     div.textContent = "⬛";
     gameArea.appendChild(div);
   });
+}
+
+function checkCollision() {
+  const level = levels[currentLevel];
+  for (let obs of level.obstacles) {
+    if (robotPos.x === obs.x && robotPos.y === obs.y) {
+      alert("❌ Game Over! You hit an obstacle.");
+      loadLevel(currentLevel); // restart same level
+      return true;
+    }
+  }
+  return false;
 }
 
 function checkWin() {
