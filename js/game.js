@@ -14,6 +14,11 @@ function moveForward() {
   else if (direction === "left" && robotPos.x > 1) robotPos.x--;
   else if (direction === "right" && robotPos.x < 5) robotPos.x++;
   updateRobot();
+
+  // ✅ Check obstacle collision after moving
+  if (!checkCollision()) {
+    checkWin();
+  }
 }
 
 function turnLeft() {
