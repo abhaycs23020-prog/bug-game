@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids Coding Blocks Game</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Blockly -->
+  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+</head>
+<body>
+
+<h1>🤖 Coding Blocks Adventure</h1>
+<p>Drag blocks to move the robot to the ⭐</p>
+
+<div id="gameArea">
+  <div id="robot">🤖</div>
+  <div id="goal">⭐</div>
+</div>
+
+<!-- Blockly workspace -->
+<div id="blocklyDiv"></div>
+<xml id="toolbox" style="display:none">
+  <block type="move_forward"></block>
+  <block type="turn_left"></block>
+  <block type="turn_right"></block>
+  <block type="repeat"></block>
+</xml>
+
+<!-- Controls -->
+<div class="controls">
+  <button onclick="runCode()">▶️ Run</button>
+  <button onclick="resetGame()">🔄 Reset</button>
+</div>
+
+<!-- JS Files -->
+<script src="js/blocks.js"></script>
+<script src="js/generators.js"></script>
+<script src="js/game.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
 
