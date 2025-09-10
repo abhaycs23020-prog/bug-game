@@ -30,16 +30,11 @@ function turnRight() {
   else if (direction === "left") direction = "up";
 }
 
+// ✅ Reset game will reload the current level (from levels.js)
 function resetGame() {
-  robotPos = {x: 1, y: 5};
-  direction = "up";
-  updateRobot();
+  loadLevel(currentLevel);
 }
 
-function checkWin() {
-  if (robotPos.x == 5 && robotPos.y == 1) {
-    alert("🎉 You Win! Robot reached the goal ⭐");
-  }
-}
+// ❌ Old checkWin() removed (handled in levels.js)
 
 updateRobot();
